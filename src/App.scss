@@ -1,0 +1,79 @@
+
+.site-layout{
+  margin-top: 64px;
+}
+.navbar-header{
+background-image: linear-gradient(to right, rgb(38, 70, 83) , rgb(48, 150, 138)) !important;
+z-index: 999;
+position: "fixed";
+
+width: "100%";
+ background-color: rgb(42, 157, 143);
+ background-color: rgb(38, 70, 83);
+ background-color: rgb(231, 111, 81);
+}
+.navbar-menu{
+
+}
+.navbar-menu-item .ant-anchor-wrapper{
+background-color: tomato !important;
+}
+
+.blogCardsCol{
+  padding: 1.5% !important;
+}
+.ant-layout-header{
+  
+}
+.ant-card{
+  border-radius: 8px !important;
+}
+.ant-card-cover{
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+  height: 27vh !important;
+  overflow: hidden;
+}
+.ant-card-body{
+  height: 27vh !important;
+  border: 1px solid white;
+}
+.blogListHeaderRow{
+  background-image: url("./images/bloglist.jpg");
+  overflow: hidden;
+  background-size: cover;
+  width: 100%;
+  padding: 4% 8%;
+}
+
+.about-section{
+  
+  background-image: linear-gradient(to right, rgba(255, 185, 185, 0.63) , rgba(215, 166, 255, 0.425)),url("./images/bloglist.jpg");
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 2%;
+  margin: 3% auto;
+
+}
+.about-section 
+a{
+  color: black;
+}
+.social-icons{
+margin-right: 2%;
+  font-size: 40px;
+}
+.footer-section{
+  background-image: linear-gradient(to left, rgb(0, 0, 0) , rgb(32, 0, 49));
+  overflow: hidden;
+  padding: 3%;
+  margin: 3% auto;
+  margin-bottom: 0;
+
+}
+.footer-section .ant-typography{
+  color: rgb(235, 235, 235);
+}
+.site-back-top-basic {
+  color: rgba(64, 64, 64, 0.6);
+}
