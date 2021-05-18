@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Carousel } from "antd";
+import { Carousel } from 'react-bootstrap';
+import bloglist from '../images/bloglist.jpg';
 
 
 const contentStyle = {
@@ -14,14 +15,13 @@ export class Homepage extends Component {
   render() {
     return (
       <div>
-        <Carousel effect="fade" autoplay style={{width:"100%", height:"400px"}}>
-          <div >
-            <img width="100%" height="400px"
+        <Carousel effect="fade" autoplay >
+          <Carousel.Item className="carousel-image-container">
+            <img 
               alt="example"
-              
-              src="https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              src={bloglist}
             />
-          </div>
+          </Carousel.Item>
         </Carousel>
       </div>
     );
