@@ -49,7 +49,7 @@ export class Navbar extends Component {
             <ul className="navbar-menu">
               <li className="navbar-menu-item"><Link className="navbar-link" to={"/"}>Home</Link></li>
               <li className="navbar-menu-item"><Link className="navbar-link" to={"/Blogs"}>Blogs</Link></li>
-              <li className="navbar-menu-item"><Link className="navbar-link" to={"/Courses"}>Courses</Link></li>
+              {/* <li className="navbar-menu-item"><Link className="navbar-link" to={"/Courses"}>Courses</Link></li> */}
             </ul>
 
 
