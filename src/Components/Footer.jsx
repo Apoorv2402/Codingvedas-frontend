@@ -32,6 +32,8 @@ function Footer() {
       <Row>
         <Col md={{span:4,offset:10}}>
         <Text >
+        <li className="navbar-menu-item"><Link className="navbar-link" to={"/Blogs"}>Blogs</Link></li>
+
       Codingvedas ©2021
         </Text>
         </Col>
