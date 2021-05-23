@@ -1,25 +1,12 @@
 import React, { Component } from 'react'
-import {
-  Layout,
-  Menu,
-  Breadcrumb,
-  PageHeader,
-  Affix,
-  Modal,
-  Button,
-} from "antd";
-import { Link, Route } from "react-router-dom";
-import CoursesList from "./Courses/CoursesList";
-import Routes from "../Routes/Routes";
-import logoNavbar from "../images/logoNavba.png";
+import { Modal } from "antd";
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
+import { Link } from "react-router-dom";
 import ContactForm from "./ContactForm";
-import AboutSection from "./AboutSection";
-import Footer from "./Footer";
-const { Header, Sider, Content } = Layout;
 
 
 
-export class Navbar extends Component {
+export class Navigationbar extends Component {
   constructor() {
     super();
     this.state = {
@@ -35,27 +22,16 @@ export class Navbar extends Component {
   render() {
     let { isContactFormModalVisible } = this.state
     return (
-      <Header
-        className="header"
+      <Navbar collapseOnSelect expand="md" sticky="top" variant="dark" className="px-4 navbar-main"
       >
-        <div className="navbar">
-          <div className="brand-container">
-            <img
-              src={logoNavbar}
-              alt="logo"
-            />
-          </div>
-          <div className="navbar-menu-container">
-            <ul className="navbar-menu">
-              <li className="navbar-menu-item"><Link className="navbar-link" to={"/"}>Home</Link></li>
-              <li className="navbar-menu-item"><Link className="navbar-link" to={"/Blogs"}>Blogs</Link></li>
-              {/* <li className="navbar-menu-item"><Link className="navbar-link" to={"/Courses"}>Courses</Link></li> */}
-            </ul>
-
-
-          </div>
-        </div>
-
+        <Navbar.Brand >CodingVedas</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav style={{ width: "95%", justifyContent: "flex-end" }}>
+            <Link className="nav-link" to={"/"}>Home</Link>
+            <Link className="nav-link" to={"/Blogs"}>Blogs</Link>
+          </Nav>
+        </Navbar.Collapse>
         <Modal
           title="Contact Form"
           visible={isContactFormModalVisible}
@@ -64,9 +40,10 @@ export class Navbar extends Component {
         >
           <ContactForm />
         </Modal>
-      </Header>
+
+      </Navbar>
     )
   }
 }
 
-export default Navbar
+export default Navigationbar

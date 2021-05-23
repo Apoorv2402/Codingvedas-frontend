@@ -1,67 +1,27 @@
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+$theme-colors: (
+  "info": tomato,
+  "danger": teal
+);
+
+
+
 $cinnabar: rgb(239, 62, 54);
 $bluegreen: rgb(23, 190, 187);
 $bluelapiz: rgb(48, 99, 142);
-$sunray: rgb(105, 83, 48);
+$sunray: rgb(255, 157, 0);
 $indigo: rgb(0, 61, 91);
 $offwhi: rgb(247, 244, 243);
 $button: rgb(89, 101, 111);
 $button2: rgb(29, 30, 44);
 
-.header {
-  //background-image: linear-gradient(to right, rgb(24, 59, 73), rgb(2, 92, 81)) !important;
-  background-image: linear-gradient(to left, rgba(255, 245, 245, 0.507), rgba(255, 243, 243, 0.795)) !important;
-  z-index: 9;
-  position: "fixed";
+.navbar-main{
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.863), rgb(32, 0, 49));
 
-  width: "100%";
-
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: inherit;
-
-    .brand-container {
-      height: inherit;
-      line-height: 2;
-      img {
-        height: 50%;
-      }
-    }
-    .navbar-menu-container {
-      margin-right: 5%;
-      display: flex;
-        justify-content: flex-start;
-        align-items: center;
-      .navbar-menu {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        height: 80%;
-        list-style: none;
-
-        .navbar-menu-item {
-          height: inherit;
-          padding: 5px 10px;
-          border-radius: 4px;
-          margin: auto 1%;
-          line-height: 1.3;
-          .navbar-link {
-            color: $offwhi;
-            text-decoration: none;
-            font-weight: 600;
-
-            &:hover {
-              color: $indigo;
-              font-weight: 600;
-            }
-          }
-        }
-      }
-    }
-  }
+  background-color: transparent;
 }
-
 .blogCardsCol {
   padding: 1.5% !important;
 }
