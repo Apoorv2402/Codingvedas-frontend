@@ -5,12 +5,14 @@ import {
   PageHeader,
   Card,
   Skeleton,
-  Pagination,
+  Button,
   Typography,
+  Spin,
 } from "antd";
 import { Link, Route } from "react-router-dom";
 import { Content } from "antd/lib/layout/layout";
 import AboutSection from "../AboutSection";
+
 
 let { Meta } = Card;
 const { Title, Text, Paragraph } = Typography;
@@ -64,20 +66,28 @@ export class BlogsList extends Component {
     this.setState({ [type]: key });
   };
 
-  paginationHandler = (value) => {
+  nextHandler = () => {
     let { minValue, maxValue } = this.state;
-    if (value === 1) {
+
+
+    this.setState({
+      minValue: maxValue,
+      maxValue: maxValue + 9
+    }, () => { console.log("min", minValue, "max", maxValue) });
+
+  }
+
+  prevHandler = () => {
+    let { minValue, maxValue } = this.state;
+
+    if (minValue >= 9) {
       this.setState({
-        minValue: 0,
-        maxValue: 8,
-      });
-    } else {
-      this.setState({
-        minValue: maxValue,
-        maxValue: value * 8,
-      });
+        minValue: minValue - 9,
+        maxValue: maxValue - 9
+      }, () => { console.log("min", minValue, "max", maxValue) });
     }
-  };
+  }
+
 
   render() {
     let { posts, isLoaded, minValue, maxValue } = this.state;
@@ -100,7 +110,7 @@ export class BlogsList extends Component {
                 />
               }
             >
-              <Meta title={item.title} description={item.body} />
+              <Meta title={item.title} description={item.body.slice(0, 150) + "..."} />
             </Card>
           </Link>
         </Col>
@@ -123,9 +133,9 @@ export class BlogsList extends Component {
           </Content>
           <Col span={24}>
             <Title
-            className="mt-4"
-            level={2}
-              style={{textAlign:"center",width:"80%",marginRight:"auto",marginLeft:"auto"}}
+              className="mt-4"
+              level={2}
+              style={{ textAlign: "center", width: "80%", marginRight: "auto", marginLeft: "auto" }}
             >Latest trend and right way to write a code & research.</Title>
           </Col>
 
@@ -134,19 +144,22 @@ export class BlogsList extends Component {
               <Row align="top">{BlogCards}</Row>
             </Col>
           ) : (
-            <Skeleton active />
+            <Spin active />
           )}
-          <Col span={12} offset={6}>
-            <Row>
-              <Pagination
-                defaultCurrent={1}
-                defaultPageSize={8}
-                total={posts.length}
-                onChange={this.paginationHandler}
-              />
-            </Row>
-          </Col>
         </Row>
+
+        <Col span={20} offset={2}>
+          <Row style={{ width: "100%" }}>
+
+            <Col span={23} >
+              <Button onClick={this.prevHandler} style={{ width: "80px" }}>Previous</Button>
+            </Col>
+
+            <Col span={1}>
+              <Button onClick={this.nextHandler} style={{ width: "80px", float: "right" }}>Next</Button>
+            </Col>
+          </Row>
+        </Col>
       </div>
     );
   }

@@ -1,44 +1,61 @@
-
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 $theme-colors: (
   "info": tomato,
-  "danger": teal
+  "danger": teal,
 );
-
-
-
 $cinnabar: rgb(239, 62, 54);
 $bluegreen: rgb(23, 190, 187);
 $bluelapiz: rgb(48, 99, 142);
 $sunray: rgb(255, 157, 0);
-$indigo: rgb(0, 61, 91);
+$color1 : #753127;
+$color2 : #192323;
+$color3 : #488fa7;
+$color4 : #55a29e;
+$indigo: #c95045;
 $offwhi: rgb(247, 244, 243);
 $button: rgb(89, 101, 111);
 $button2: rgb(29, 30, 44);
 
-.navbar-main{
-  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.863), rgb(32, 0, 49));
+.navbar-main {
+  background-image: linear-gradient(to bottom left, #55a29e, #488fa7);
 
-  background-color: transparent;
+  // background-color: $color3;
 }
 .blogCardsCol {
   padding: 1.5% !important;
 }
 .ant-layout-header {
 }
-.ant-card {
-  border-radius: 8px !important;
+.page-card,.grid-card {
+  margin: 1.5rem auto !important;
+  border-radius: 6px !important;
+    .page-card-carousel {
+    display: flex !important;
+    justify-content: center !important;
+    margin-bottom: 2% !important;
+    .page-card-image {
+      max-height: 60vh;
+    }
+  }
 }
-.ant-card-cover {
-  border-top-left-radius: 8px !important;
-  border-top-right-radius: 8px !important;
-  height: 27vh !important;
-  overflow: hidden;
-}
-.ant-card-body {
-  height: 27vh !important;
-  border: 1px solid white;
+
+.blogCardsCol {
+  .ant-card {
+    background-image: linear-gradient(to bottom, rgba(231, 231, 231, 0.966), rgb(255, 255, 255)) !important;
+    background-color: transparent !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    padding: 6px !important;
+  }
+  .ant-card-cover {
+    border-radius: 8px !important;
+    height: 27vh !important;
+    overflow: hidden;
+  }
+  .ant-card-body {
+    height: 27vh !important;
+  }
 }
 .blogListHeaderRow {
   background-image: url("./images/bloglist.jpg");
@@ -47,9 +64,16 @@ $button2: rgb(29, 30, 44);
   width: 100%;
   padding: 4% 8%;
 }
+.home-page-header{
+  background-image: url("./images/homeheader.jpg");
+  overflow: hidden;
+  background-size: cover;
+  width: 100%;
+  padding: 4% 8%;
+}
 
 .about-section {
-  background-image: linear-gradient(to right, rgba(255, 185, 185, 0.63), rgba(215, 166, 255, 0.425)),
+  background-image: linear-gradient(to bottom left, #55a29e, #488fa7),
     url("./images/bloglist.jpg");
   border-radius: 8px;
   overflow: hidden;
@@ -64,7 +88,7 @@ $button2: rgb(29, 30, 44);
   font-size: 40px;
 }
 .footer-section {
-  background-image: linear-gradient(to left, rgb(0, 0, 0), rgb(32, 0, 49));
+  background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(32, 0, 49));
   overflow: hidden;
   padding: 3%;
   margin: 3% auto;

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import { Row, Col, PageHeader, Card, Skeleton, Pagination, Spin } from "antd";
+import { Row, Col, PageHeader, Card, Skeleton, Pagination, Spin, Image } from "antd";
+import { Carousel } from 'react-bootstrap';
+import GridItems from "../GridItems";
 let { Meta } = Card;
 
 export class BlogsPage extends Component {
@@ -32,26 +34,34 @@ export class BlogsPage extends Component {
 
     //console.log(this.props.match.params.id);
     return (
-      <div style={{minHeight:"1000px"}}>
+      <div >
         {isLoaded ? (
           <Row>
-            <Col span={18} className="">
-              <PageHeader
-                className="site-page-header"
-                onBack={() => null}
-                title={posts[blogId].title}
-                subTitle={false}
-              />
-              <img
-                alt="example"
-                height="100px"
-                src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-              />
-              <p>{posts[blogId].body}</p>
+            <Col lg={{ span: 15, offset: 1 }}>
+              <Card title={posts[blogId].title} className="page-card">
+                
+
+
+                <Carousel>
+                  <Carousel.Item className="page-card-carousel">
+                    <img
+                      alt="example"
+                      className="page-card-image"
+                      src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+                      />
+                  </Carousel.Item>
+                </Carousel>
+                <Meta  description={posts[blogId].body} />
+                     
+                     
+              </Card>
+            </Col>
+            <Col lg={{ span: 6, offset: 1 }} xs={{ span: 22, offset:1 }}>
+              <GridItems />
             </Col>
           </Row>
         ) : (
-          <Skeleton active />
+          <Spin />
         )}
       </div>
     );
