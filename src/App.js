@@ -3,11 +3,7 @@ import './App.scss';
 import LayoutRoutes from './Routes/LayoutRoutes'
 
 function App() {
-  return (
-
-     <LayoutRoutes/>
-    
-  );
+  return <LayoutRoutes/>;
 }
 
 export default App;

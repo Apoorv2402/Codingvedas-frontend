@@ -4,14 +4,27 @@ import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import { Link } from "react-router-dom";
 import ContactForm from "./ContactForm";
 
-
-
 export class Navigationbar extends Component {
   constructor() {
     super();
     this.state = {
       isContactFormModalVisible: false,
+      navbarScrolled: false
     };
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 380) {
+        this.setState({ navbarScrolled: true });
+      }
+      else {
+        this.setState({ navbarScrolled: false });
+      }
+    })
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', () => { })
   }
 
   isContactFormVisibleModalHandler = () => {
@@ -19,10 +32,12 @@ export class Navigationbar extends Component {
       isContactFormModalVisible: !this.state.isContactFormModalVisible,
     });
   };
+  
   render() {
-    let { isContactFormModalVisible } = this.state
+    let { isContactFormModalVisible, navbarScrolled } = this.state
     return (
-      <Navbar collapseOnSelect expand="md" sticky="top" variant="dark" className="px-4 navbar-main"
+      <Navbar collapseOnSelect expand="md" sticky="top"
+        className={!navbarScrolled ? `px-4 navbar-main` : `px-4 navbar-main-scrolled`}
       >
         <Navbar.Brand >CodingVedas</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -40,7 +55,6 @@ export class Navigationbar extends Component {
         >
           <ContactForm />
         </Modal>
-
       </Navbar>
     )
   }

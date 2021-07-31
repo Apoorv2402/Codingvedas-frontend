@@ -4,6 +4,17 @@ $theme-colors: (
   "info": tomato,
   "danger": teal,
 );
+
+$font-primary: 'Nunito Sans',Arial, sans-serif;
+
+$white: #fff;
+$black: #000000;
+$light: #f3f3f3;
+
+$primary: #d1002c;
+$secondary: #fff5ed;
+$darken: #0f0f13;
+
 $cinnabar: rgb(239, 62, 54);
 $bluegreen: rgb(23, 190, 187);
 $bluelapiz: rgb(48, 99, 142);
@@ -17,10 +28,51 @@ $offwhi: rgb(247, 244, 243);
 $button: rgb(89, 101, 111);
 $button2: rgb(29, 30, 44);
 
-.navbar-main {
-  background-image: linear-gradient(to bottom left, #55a29e, #488fa7);
 
-  // background-color: $color3;
+#root{
+  font-family: $font-primary;
+	background: $white !important;
+	// font-size: 16px;
+	line-height: 1.8;
+	font-weight: 400;
+	color: lighten($darken,60%);
+}
+
+a {
+	transition: .3s all ease;
+	color: $primary;
+	&:hover, &:focus {
+		text-decoration: none;
+		color: $primary;
+		outline: none !important;
+	}
+}
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5 {
+	line-height: 1.5;
+	color: rgba(0,0,0,.8);
+	font-weight: 400;
+}
+
+.navbar-main {
+ // background-image: linear-gradient(to bottom left, #55a29e, #488fa7);
+  z-index: 999;
+  background-color: transparent !important; 
+}
+.navbar-main-scrolled {
+  // background-image: linear-gradient(to bottom left, #55a29e, #488fa7);
+   z-index: 999;
+   background-color: $white !important; 
+   box-shadow: black;
+ }
+.navbar-brand{
+  margin-left: 20px;
+}
+.navbar-brand,.nav-link{
+  color: $cinnabar !important;
+}
+.navbar-nav{
+  justify-content: center !important;
 }
 .blogCardsCol {
   padding: 1.5% !important;
@@ -39,6 +91,24 @@ $button2: rgb(29, 30, 44);
     }
   }
 }
+.home-page-header{
+  position: relative;
+  top:-60px !important;
+  background-image: url("./images/homeheader.jpg");
+  overflow: hidden;
+  background-size: cover;
+  width: 100%;
+  padding: 4% 8%;
+  margin-bottom: -50px !important;
+}
+
+.blogListHeaderRow {
+  background-image: url("./images/bloglist.jpg");
+  overflow: hidden;
+  background-size: cover;
+  width: 100%;
+  padding: 4% 8%;
+}
 
 .blogCardsCol {
   .ant-card {
@@ -56,20 +126,6 @@ $button2: rgb(29, 30, 44);
   .ant-card-body {
     height: 27vh !important;
   }
-}
-.blogListHeaderRow {
-  background-image: url("./images/bloglist.jpg");
-  overflow: hidden;
-  background-size: cover;
-  width: 100%;
-  padding: 4% 8%;
-}
-.home-page-header{
-  background-image: url("./images/homeheader.jpg");
-  overflow: hidden;
-  background-size: cover;
-  width: 100%;
-  padding: 4% 8%;
 }
 
 .about-section {
@@ -104,4 +160,14 @@ $button2: rgb(29, 30, 44);
   width: 100%;
   max-height: 80vh;
   overflow: hidden;
+}
+
+@media screen and (max-width: 768) {
+  .navbar-brand{
+    margin-left: 0px !important;
+  }
+  .navbar-expand-md{
+    background-color: transparent !important;
+    position: absolute !important;
+  }
 }
