@@ -1,13 +1,8 @@
 import logo from './logo.svg';
 import './App.scss';
-import LayoutRoutes from './Routes/LayoutRoutes'
+import HomeLayout from './Components/HomeLayout';
 
 function App() {
-  return (
-
-     <LayoutRoutes/>
-    
-  );
+  return <HomeLayout/>;
 }
-
 export default App;
