@@ -13,26 +13,20 @@ export class Navigationbar extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   console.log("--=-=props-=-=", this.props)
-  //   window.addEventListener('scroll', () => {
-  //     if (window.scrollY > 365) {
-  //       this.setState({ navbarScrolled: true });
-  //     }
-  //     else {
-  //       this.setState({ navbarScrolled: false });
-  //     }
-  //   })
-  // }
+   componentDidMount() {
+     window.addEventListener('scroll', () => {
+       if (window.scrollY > 250) {
+         this.setState({ navbarScrolled: true });
+       }
+       else {
+         this.setState({ navbarScrolled: false });
+       }
+     })
+   }
 
-  // componentDidUpdate(){
-  //   console.log("didupdate-=props-=-=", this.props)
-
-  // }
-
-  // componentWillUnmount() {
-  //   window.removeEventListener('scroll', () => { })
-  // }
+   componentWillUnmount() {
+     window.removeEventListener('scroll', () => { })
+   }
 
   isContactFormVisibleModalHandler = () => {
     this.setState({
@@ -45,21 +39,23 @@ export class Navigationbar extends Component {
     return (
       <Navbar 
         collapseOnSelect
-        expand="md" 
         variant="light"
-        bg="transparent"
-        
-         className="px-4 navbar-main justify-content-space-between"
+        expand="md" 
+        fixed="top"
+        className={!navbarScrolled ? 
+          " navbar-main ": 
+          "  navbar-main bg-white"}
       >
         <Navbar.Brand >CodingVedas</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav >
+        <Navbar.Collapse id="responsive-navbar-nav" >
+          <Nav style={{ width: "95%", justifyContent: "flex-end" }}>
             <Nav.Link className="nav-link" href={"/"}>Home</Nav.Link>
-            <Nav.Link className="nav-link" href={"/Blogs"}>Blogs</Nav.Link>
-            <Link className="nav-link" onClick={()=>{
-              this.setState({isContactFormModalVisible:true})
-            }}>Sign Up</Link>
+            <Nav.Link className="nav-link" href={"/Blogs"}>Blog</Nav.Link>
+            <Link className="nav-link" onClick={()=> this.isContactFormVisibleModalHandler()}>Login</Link>
+            <button className="nav-btn" onClick={()=> this.isContactFormVisibleModalHandler()}>
+              Get Started
+            </button>
           </Nav>
         </Navbar.Collapse>
         <Modal

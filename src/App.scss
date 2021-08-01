@@ -12,15 +12,18 @@ $darken: #0f0f13;
 $navlink: rgba(255, 255, 255, 0.6);
 
 $bluegreen: rgb(23, 190, 187);
-$bluelapiz: rgb(48, 99, 142);
+$bluelapiz: rgba(70, 76, 80, 0.74);
 $color3 : #488fa7;
 $color4 : #55a29e;
 $indigo: #c95045;
 
-.bg-transparent{
-  background-color: $bluelapiz !important;
+.bg-white{
+  background-color: $white !important;
+  box-shadow: 0px 0px 5px 0px #aaaaaa;
+  .nav-link {
+    color: $darken !important;
+  }
 }
-
 
 #root{
   font-family: $font-primary;
@@ -28,18 +31,17 @@ $indigo: #c95045;
 	// font-size: 16px;
 	line-height: 1.8;
 	font-weight: 400;
-	color: lighten($darken,60%);
 }
 
-// a {
-// 	transition: .3s all ease;
-// 	// color: $primary;
-// 	&:hover, &:focus {
-// 		text-decoration: none;
-// 		color: $primary;
-// 		outline: none !important;
-// 	}
-// }
+ a {
+ 	transition: .3s all ease;
+ 	// color: $primary;
+ 	&:hover, &:focus {
+ 		text-decoration: none;
+ 		color: $primary;
+ 		outline: none !important;
+ 	}
+ }
 
 h1, h2, h3, h4, h5,
 .h1, .h2, .h3, .h4, .h5 {
@@ -55,27 +57,36 @@ h1, h2, h3, h4, h5,
   -o-transition: all ease-in .25s;
   transition: all ease-in .25s;
 }
-.navbar-main-scrolled {
-  width: 100% !important;
-   box-shadow: 0px 0px 5px 0px #aaaaaa;
- }
 
 .navbar-brand{
   margin-left: 20px;
   color: $primary !important;
 }
-// .nav-link{
-//   color: $navlink !important;
-// }
-// .nav-link:hover{
-//   color: $primary !important;
-// }
-// .nav-link-selected{
-//   color: $primary !important;
-// }
-.navbar-nav{
-  justify-content: center !important;
-}
+ .nav-link{
+   color: $navlink !important;
+ }
+ .nav-btn{
+   border-radius: 18px;
+   margin-top: auto;
+   color: $white;
+   background-color: $primary;
+   margin-bottom: auto;
+   padding-left: 10px;
+   padding-right: 10px;
+   margin-left: 10px;
+   height: 32px;
+   border: none;
+ }
+ .nav-btn:hover{
+  color: $primary;
+  background-color: $white;
+ }
+ .nav-link:hover{
+   color: $primary !important;
+ }
+ .nav-link-selected{
+   color: $primary !important;
+ }
 .blogCardsCol {
   padding: 1.5% !important;
 }
@@ -122,18 +133,17 @@ h1, h2, h3, h4, h5,
     height: 27vh !important;
   }
 }
+.ant-layout-content{
+  background-color: $white;
+}
 
 .about-section {
-  background-image: linear-gradient(to top left, $primary, $secondary),
-    url("./images/bloglist.jpg");
-  border-radius: 8px;
-  overflow: hidden;
-  padding: 2%;
-  margin: 3% auto;
+ 
 }
 .about-section a {
   color: black;
 }
+
 .social-icons {
   margin-right: 2%;
   font-size: 40px;
@@ -157,18 +167,42 @@ h1, h2, h3, h4, h5,
   overflow: hidden;
 }
 
+.service-card{
+img{
+  width: 30%;
+  margin-left: 35% !important;
+  margin-bottom: 10px;
+}
+h5{
+  text-align: center;
+  margin-bottom: 10px;
+}
+}
+
 @media screen and (max-width: 768) {
-  .navbar-brand{
-    margin-left: 0px !important;
+
+  .navbav-main{
+
+    a .nav-link{
+      text-align: center !important;
+    }
+  } 
+  .services{
+    display: flex ;
+    flex-direction: row;
   }
   .navbar-expand-md{
-    background-color: transparent !important;
-    position: absolute !important;
+    background-color: $white !important;
   }
-  .navbar-main-scrolled {
-    z-index: 999;
-    background-color: $white !important; 
-    transition: ease-in-out;
-    box-shadow: 0px 0px 5px 0px #aaaaaa;
-  }
-}
+  .service-card{
+    img{
+      width: 50%;
+      margin-left: 25% !important;
+      margin-bottom: 10px;
+    }
+    h5{
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    }
+} 

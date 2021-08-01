@@ -3,7 +3,7 @@ import { Carousel } from 'react-bootstrap';
 import bloglist from '../images/bloglist.jpg';
 import GridItems from "./GridItems";
 import {Col, Layout, Typography} from 'antd'
- 
+import AboutSection from "./AboutSection";
 const {Title, Paragraph} = Typography;
 const {Content} = Layout;
 
@@ -36,6 +36,7 @@ export class Homepage extends Component {
             <Col xs={{ span: 22, offset:1 }}>
 
         <GridItems />
+        <AboutSection />
             </Col>
       </div>
     );
