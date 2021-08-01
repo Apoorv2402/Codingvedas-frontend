@@ -50,8 +50,8 @@ export class Navigationbar extends Component {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav" >
           <Nav style={{ width: "95%", justifyContent: "flex-end" }}>
-            <Nav.Link className="nav-link" href={"/"}>Home</Nav.Link>
-            <Nav.Link className="nav-link" href={"/Blogs"}>Blog</Nav.Link>
+            <Link className="nav-link" to={"/"}>Home</Link>
+            <Link className="nav-link" to={"/Blogs"}>Blog</Link>
             <Link className="nav-link" onClick={()=> this.isContactFormVisibleModalHandler()}>Login</Link>
             <button className="nav-btn" onClick={()=> this.isContactFormVisibleModalHandler()}>
               Get Started
