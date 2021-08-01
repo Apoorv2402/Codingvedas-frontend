@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import { CoursesList } from "../Components/Courses/CoursesList";
-import Blog from "../Material/blog";
+import BlogList from "../Components/Blog/BlogsList";
 import Homepage from "../Components/Homepage";
 import CourseDetails from "../Components/Courses/CourseDetails";
 import { BlogsPage } from "../Components/Blog/BlogsPage";
@@ -27,7 +27,7 @@ export class Routes extends Component {
           </Route>
           <Route exact="true" path={"/Blogs"}>
             {" "}
-            <Blog />{" "}
+            <BlogList />{" "}
           </Route>
           <Route exact="true" path={"/Courses/:id"}>
             {" "}
